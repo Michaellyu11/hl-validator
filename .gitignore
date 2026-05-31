@@ -1,0 +1,48 @@
+# ── DENY-BY-DEFAULT ───────────────────────────────────────────────────
+# This public repo is built from an explicit allowlist (see MANIFEST.md):
+# ignore everything, then re-allow only vetted, secret-scanned paths. This
+# bounds the irreversible risk of leaking a secret into public git history.
+
+# 1) ignore everything
+*
+
+# 2) re-allow the vetted tree
+!.gitignore
+!LICENSE
+!README.md
+!requirements.txt
+!MANIFEST.md
+
+!quant_lab/
+!quant_lab/__init__.py
+!quant_lab/validation/
+!quant_lab/validation/__init__.py
+!quant_lab/validation/dsr.py
+!quant_lab/validation/kill_tests.py
+!quant_lab/validation/engine.py
+!quant_lab/validation/explanation.py
+!quant_lab/validation/spec.py
+
+!tests/
+!tests/test_dsr.py
+!tests/test_verdict_user_layer.py
+
+!docs/
+!docs/DESIGN.md
+!docs/DSR.md
+!docs/VERDICT.md
+!docs/example_verdict_whalefollow_v3.md
+
+# 3) hard belt-and-suspenders: never track these even if re-added above
+trial_counter.json
+*.sqlite
+*.duckdb
+*.log
+.env
+**/data/
+**/secrets*
+**/*credential*
+**/.DS_Store
+__pycache__/
+*.pyc
+_*.txt

@@ -1,0 +1,11 @@
+# Public engine excerpt — runtime + test deps only.
+# (The data-collection layer, API server, and MCP server are NOT in this
+# public repo and carry their own private dependency sets.)
+scipy>=1.11        # dsr.py / engine.py — Deflated Sharpe (scipy.stats)
+pyyaml>=6.0        # spec.py — hypothesis spec loading
+pytest>=8.0        # tests/
+
+# Optional (only for the engine's regime-classification code path, which
+# reads a DuckDB of daily closes — not needed to import the modules or run
+# the bundled tests):
+# duckdb>=0.10
