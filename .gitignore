@@ -32,6 +32,8 @@
 !docs/DSR.md
 !docs/VERDICT.md
 !docs/example_verdict_whalefollow_v3.md
+!docs/findings/
+!docs/findings/leaderboard-audit.md
 
 # 3) hard belt-and-suspenders: never track these even if re-added above
 trial_counter.json
